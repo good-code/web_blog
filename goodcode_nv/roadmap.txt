@@ -1,0 +1,28 @@
+goal 1:  deployment.
+
+2) add content and check spelling in all posts.
+3) 2 more posts wait for adding 
+4) bleatchley park ticket needs to  be scanned + photos
+
+goal 2: change frontpage.
+
+1) redesign it.
+2) logo.
+3) screenshots with links to other pages.
+4) blog latest in sidebar.
+
+goal 3: connect with social networks:
+
+1) integrate twitter
+2) integrete facebook
+3) add page to django-websites and other similar
+4) add some code to bitbacket
+
+goal 4: javascript:
+
+1) each post could have rotating set of photos,  or at least a photo ;-)
+2) uplading photos could be done using js xhr thing very nice drag and drop
+bookmarked already.
+3) onmouse over logo each character could rise in size and shrink to normal
+and then another one, sort of animation.
+
