@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load markup %}
+
+{% block content %}
+<div class="post_list">{% for post in posts %}
+<div class="post clearfix">
+<div class='post_header'>
+<div class="date"> 
+{{post.created|date:"b d"|capfirst}}
+</div>
+<img id='shadow' src='http://images.goodcode.co.uk/shadow.png'/>
+<h2><a href='/post/{{post.sku}}'>{{post.title}}</a></h2>
+</div>
+
+<div class="post_content"> {{post.content|markdown}} </div>
+
+</div>
+{% endfor %}
+
+</div>
+{% endblock %}

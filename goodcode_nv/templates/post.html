@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load markup %}
+{% load comments %}
+
+{% block content %}
+<div class="post">
+    <h1>{{ post.title }}</h1>
+   <div class="modified" style='float:right;clear:both;'><b>Last modified</b>: {{post.modified|date:"b d Y"|capfirst}} </div>
+            <div class="body">
+{{post.content|markdown}}
+{% render_comment_list for post %}                                                      
+{% render_comment_form for post %}
+    </div>
+</div>
+{% endblock %}

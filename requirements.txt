@@ -1,0 +1,4 @@
+django 
+django-reversion 
+markdown 
+flup

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>goodcode</title>
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta name="author" content="Arek">
+        <meta name="google-site-verification" content="KmqWrBYSC58ZEE2Xlk06NpsmpQq0twm3qD_7T4yNvGE" />
+        <meta name="copyright" content="arek@goodcode.co.uk" />
+        <link rel="shortcut icon" href="http://images.goodcode.co.uk/img/favicon.ico" type="image/x-icon"/>
+        <link rel="alternate" type="application/rss+xml" title="#goodcode main rss feed" href="">
+        <link rel="stylesheet" href="http://images.goodcode.co.uk/css/reset.css" type="text/css" media="all" charset="utf-8">
+        <link rel="stylesheet" href="http://images.goodcode.co.uk/css/base.css" type="text/css" media="all" charset="utf-8">
+        <link rel="stylesheet" href="http://images.goodcode.co.uk/css/fonts.css" type="text/css" media="all" charset="utf-8">
+    </head>
+    <body>
+        <div id="body-container" class="clearfix">
+        <div id="header" class="clearfix">
+        <div id="logo"> <h1><a href="/" title="goodcode">goodcode</a></h1></div>
+<p id='logo_fortune'>"Python makes us extremely productive, and makes maintaining a large and rapidly evolving codebase relatively simple," said Mark Shuttleworth.</p>
+        <div id="nav">
+            <ul class="navbar">
+                <li><a href="/about/" title="about">about</a></li>
+                <li><a href="/contact/" title="contact">contact</a></li>
+                <li><a href="/latest.rss" title="subscribe">subscribe</a></li></ul>
+
+                <form id='search' action="/search/" method="GET">
+                  <input type="text" name="q" value="">
+                  <input type="submit" class="button" value="Search">
+          </form>
+          </div></div>
+          <div id="content">
+              {% block content %}
+              {% endblock %} 
+                             
+      <div id="right-container">
+           {% block right_rail %}
+              <h4>About</h4><p>place  to blog about what I'm busy with  ...</p>
+           {% endblock %} 
+     </div> </div></div></div></div>
+</div>
+    <div id="footer">{% block footer %}
+        <p id='django_link'> Powered by <a href="http://djangoproject.com" title="Django - web framework for perfectionists with deadlines.">Django</a>
+        project.
+        </p>
+       {% endblock %} 
+</body>
+</html>

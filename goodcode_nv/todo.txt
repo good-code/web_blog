@@ -1,0 +1,14 @@
+about contact subscribe pages or remove links to them
+search page and fulltext search in postgres.  code in weadmire 
+categories or tags or both.
+setup caching.
+comments.
+add content and vuala
+make meta optional at the moment it is required.
+
+customer module.
+multicustomer module with invoices, todos.
+front page with sample pages.  software offers.  custom make good software on offer.  
+
+automated advertising with offers needs doing. anyone interested in hiring Arkadiusz?  he needs proper job.  anywhere in europe.
+
