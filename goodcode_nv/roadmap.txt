@@ -26,3 +26,6 @@ bookmarked already.
 3) onmouse over logo each character could rise in size and shrink to normal
 and then another one, sort of animation.
 
+goal 5 comments moderation as discribed in todo.
+
+this is more important than any other project, everything else treat as less important.
