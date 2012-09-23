@@ -12,8 +12,8 @@
 <h2><a href='/post/{{post.sku}}'>{{post.title}}</a></h2>
 </div>
 
-<div class="post_content"> {{post.content|markdown}} </div>
-
+<div class="post_content"> {{post.content|truncatewords_html:60|markdown}} </div>
+<a href='/post/{{post.sku}}' style='float:right;'>.. continue reading</a>
 </div>
 {% endfor %}
 
