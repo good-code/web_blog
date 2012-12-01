@@ -2,20 +2,31 @@
 {% load markup %}
 
 {% block content %}
-<div class="post_list">{% for post in posts %}
+<div id="post_list">
+<div id="post_list_container">{% for post in posts|slice:":5" %}
 <div class="post clearfix">
 <div class='post_header'>
 <div class="date"> 
 {{post.created|date:"b d"|capfirst}}
-</div>
+</div><!--enddate-->
 <img id='shadow' src='http://images.goodcode.co.uk/shadow.png'/>
-<h2><a href='/post/{{post.sku}}'>{{post.title}}</a></h2>
-</div>
+<h2><a href='{{post.url}}'>{{post.title}}</a></h2>
+</div><!--endpost_header-->
 
-<div class="post_content"> {{post.content|truncatewords_html:60|markdown}} </div>
-<a href='/post/{{post.sku}}' style='float:right;'>.. continue reading</a>
-</div>
+<div class="post_content"> {{post.content|truncatewords_html:60|markdown}} </div><!--endpost_content-->
+<a href='{{post.url}}' style='float:right;'>.. continue reading</a>
+</div><!--endpost_clearfix-->
 {% endfor %}
+</div></div><!--endpost_list-->
 
-</div>
+<div id='separator'></div>
 {% endblock %}
+
+{% block right_rail %}
+	<ul>
+		{% for post in posts %}
+       		<li><a class="link" href="{{post.url}}">{{post.title}}</a>
+		{% endfor %}
+	</ul>
+{% endblock %} 
+

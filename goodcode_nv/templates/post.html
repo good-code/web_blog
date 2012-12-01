@@ -5,7 +5,7 @@
 {% block content %}
 <div class="post">
     <h1>{{ post.title }}</h1>
-   <div class="modified" style='float:right;clear:both;'><b>Last modified</b>: {{post.modified|date:"b d Y"|capfirst}} </div>
+   <div class="modified" style=''><b>Last modified</b>: {{post.modified|date:"b d Y"|capfirst}} </div>
             <div class="body">
 {{post.content|markdown}}
 {% render_comment_list for post %}                                                      
@@ -13,3 +13,8 @@
     </div>
 </div>
 {% endblock %}
+
+
+{% block right_rail %}
+{% endblock %} 
+

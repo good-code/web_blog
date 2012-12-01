@@ -1,15 +1,14 @@
 goal 1:  deployment.
 
 2) add content and check spelling in all posts.
-3) 2 more posts wait for adding 
 4) bleatchley park ticket needs to  be scanned + photos
+5) blog post list needs active field.
+6) reformat post page. code samples have  no margins, it needs titles lists etc formated right.
 
 goal 2: change frontpage.
 
-1) redesign it.
-2) logo.
+1) current front will go to goodcode.co.uk/blog/ new front will have latest post list and other thingis.
 3) screenshots with links to other pages.
-4) blog latest in sidebar.
 
 goal 3: connect with social networks:
 
@@ -27,5 +26,8 @@ bookmarked already.
 and then another one, sort of animation.
 
 goal 5 comments moderation as discribed in todo.
+1) install threded comments for django
+2) test different pkgs.
 
-this is more important than any other project, everything else treat as less important.
+keyword map,  smart function to extract keywords from posts then to create a map of them on the 
+blog side.  postgresql functions could be helpful. or just new ones in python for practice.

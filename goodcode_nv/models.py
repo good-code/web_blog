@@ -18,8 +18,11 @@ class Post(models.Model):
       return u"%s - %s" % (self.title, self.sku)
 
    def get_absolute_url(self):
-      return u"%s/%s/" % (settings.SITE_URL , self.sku)
-   
+      return u"%s/post/%s/" % (settings.SITE_URL , self.sku)
+
+   def url(self):
+      return u"/post/%s" % self.sku
+    
    def save(self, force_insert=False, force_update=False, **kwargs):
       '''Overwrite save method to send message_from_visitor signal,
          only when confirm was ticked on'''
