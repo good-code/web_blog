@@ -36,8 +36,8 @@ a {
 	margin: 20px 0px 0px 40px;
 }
 #django_link {
-	float: right;
-	margin:10px;
+	margin-left:30px;
+	color: white;
 }
 #logo a {
 	font-family: GranaPadano;
@@ -90,6 +90,7 @@ h2     {
 	}
 #nav {
 	float:right;
+	margin-right: 30px;
         
 }
 
@@ -107,17 +108,23 @@ h2     {
 	margin: 0 20px 0 0;
 }
 
+#search input {
+	float:left;
+}
+
 #content {
 	width: 80%;
 	margin: auto;
 	background-color: rgba(255,255,255,89);
 	border: 1px solid white;
-	border-radius: 0.5em 0.5em 0.5em 0.5em;
+	border-radius: 0.5em 0.5em 0.0em 0.0em;
 	min-height: 1200px;
 	padding: 20px;
 	
 }
 #right-container {
+	position: relative;
+	top:-1400px;
 	width: 350px;
 	float:right;
 }
@@ -126,9 +133,8 @@ h2     {
 	background-color: black;
 	min-height: 150px;
 }
-.post_list {
-	float:left;
-	width:60%;
+#post_list_container {
+	width:900px;
 }
 	
 .post {
@@ -164,5 +170,21 @@ input, textarea {
 }
 code {
     font-family: Terminus;
+    margin: 30px;
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
 }
 
+#separator {
+      height:100px;
+}
+.modified {
+	float: right;
+	position: relative;
+	top: -90px;
+}
+.link {
+        text-decoration: none;
+}
+.link:hover {
+	text-decoration: underline;
+}
