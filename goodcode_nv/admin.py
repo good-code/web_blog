@@ -1,21 +1,25 @@
 from reversion.admin import VersionAdmin
-from models import Post
+from models import Post, Fortune
 from django.contrib import admin
 
 class PostOptions(admin.ModelAdmin):
    pass
 
-# admin.site.register(Post, PostOptions)
-
-#class VersionedPageAdmin(PageAdmin, VersionAdmin):
-#        pass
+class FortuneOptions(admin.ModelAdmin):
+   pass
 
 
-#admin.site.unregister(Post)
 class VersionedPostAdmin(VersionAdmin, PostOptions):
-    pass
+   ordering = ('-created','title','sku')
+   list_display = ('title', 'sku', 'active', 'created', 'modified')
+   list_filter = ('active',)
+   search_fields = ['sku', 'name']
 
+class VersionedFortuneAdmin(VersionAdmin, FortuneOptions):
+   ordering = ('name','slug')
+   list_display = ('name', 'slug', 'active', 'created',)
+   list_filter = ('active',)
+   search_fields = ['slug', 'name']
 
-#admin.site.register(Page, VersionedPageAdmin)
-#admin.site.unregister(PostOptions)
 admin.site.register(Post, VersionedPostAdmin)
+admin.site.register(Fortune, VersionedFortuneAdmin)

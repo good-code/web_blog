@@ -14,12 +14,11 @@
 </div><!--endpost_header-->
 
 <div class="post_content"> {{post.content|truncatewords_html:60|markdown}} </div><!--endpost_content-->
-<a href='{{post.url}}' style='float:right;'>.. continue reading</a>
+<a class="link" href='{{post.url}}' style='float:right;'>.. continue reading</a>
 </div><!--endpost_clearfix-->
 {% endfor %}
 </div></div><!--endpost_list-->
 
-<div id='separator'></div>
 {% endblock %}
 
 {% block right_rail %}

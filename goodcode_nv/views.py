@@ -1,12 +1,12 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from goodcode_nv.models import Post
+from goodcode_nv.models import Post, Fortune
 
 def frontpage(request):
     '''
     renders front page shows list of post,  categories,  
     '''
-    ctx= {'posts': Post.objects.filter(active=True).order_by('-created')}
+    ctx= {'posts': Post.objects.filter(active=True).order_by('-created'), 'fortune': Fortune.objects.all().order_by('?')[:1]}
     return render_to_response('front_page.html', ctx,
            context_instance=RequestContext(request))
 
