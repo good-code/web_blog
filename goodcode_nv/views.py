@@ -1,6 +1,8 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from goodcode_nv.models import Post, Fortune
+from django.views.generic import TemplateView
+
 
 def frontpage(request):
     '''
@@ -18,4 +20,9 @@ def render_post(request, sku):
     return render_to_response('post.html', ctx,
            context_instance=RequestContext(request))
 
+class Render_Post(TemplateView):
+    template_name = 'post.html'
+
+    def dispatch(self, *args, **kwargs):
+           return super(Render_Post, self).dispatch(*args, **kwargs)
 

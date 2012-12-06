@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.views.generic.simple import direct_to_template
 from goodcode_nv.feeds import LatestPosts
+from goodcode_nv.views import Render_Post
 
 from django.contrib import admin
 admin.autodiscover()
@@ -9,6 +10,7 @@ urlpatterns = patterns('',
     # url(r'', include('feincms.urls')),
      url(r'^$', 'goodcode_nv.views.frontpage'),
      url(r'^post/(?P<sku>.*)$', 'goodcode_nv.views.render_post'),
+     #url(r'^post/(?P<sku>.*)$', Render_post.as_view()),  #for somebody who pretends to be a boss you sound patetic.
      url(r'^about/', direct_to_template, {'template': 'about.html'}),
      url(r'^contact/', direct_to_template, {'template': 'contact.html'}),
      url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

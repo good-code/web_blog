@@ -1,9 +1,7 @@
 goal 1:  deployment.
 
-2) add content and check spelling in all posts.
+2) check spelling in all posts.
 4) bleatchley park ticket needs to  be scanned + photos
-5) blog post list needs active field.
-6) reformat post page. code samples have  no margins, it needs titles lists etc formated right.
 
 goal 2: change frontpage.
 
