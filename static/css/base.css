@@ -188,3 +188,7 @@ code {
 .link:hover {
 	text-decoration: underline;
 }
+.button {
+	clear:none;
+	float:right;
+}
