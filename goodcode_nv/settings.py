@@ -97,6 +97,10 @@ WSGI_APPLICATION = 'goodcode_nv.wsgi.application'
 TEMPLATE_DIRS = (
    '/home/arek/projects/goodcode_nv/goodcode_nv/templates/',
 )
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'goodcode_nv.context_processors.add_fortune',
+)
 
 INSTALLED_APPS = (
     'django.contrib.auth',

@@ -120,6 +120,7 @@ h2     {
 	border-radius: 0.5em 0.5em 0.0em 0.0em;
 	min-height: 1200px;
 	padding: 20px;
+	min-width:900px;
 	
 }
 #right-container {
@@ -134,7 +135,7 @@ h2     {
 	min-height: 150px;
 }
 #post_list_container {
-	width:900px;
+	width:60%;
 }
 	
 .post {

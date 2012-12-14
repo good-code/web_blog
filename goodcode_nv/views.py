@@ -8,7 +8,7 @@ def frontpage(request):
     '''
     renders front page shows list of post,  categories,  
     '''
-    ctx= {'posts': Post.objects.filter(active=True).order_by('-created'), 'fortune': Fortune.objects.all().order_by('?')[:1]}
+    ctx= {'posts': Post.objects.filter(active=True).order_by('-created'), }
     return render_to_response('front_page.html', ctx,
            context_instance=RequestContext(request))
 
@@ -20,7 +20,7 @@ class Render_Frontpage(TemplateView):
 
     def get_context_data(self,  **kwargs):
 	ctx= {'posts': Post.objects.filter(active=True).order_by('-created'),
-              'fortune': Fortune.objects.all().order_by('?')[:1]}
+              'fortune': Fortune.objects.all().order_by('?')[0]}
 	return ctx
 
 class Render_Post(TemplateView):
