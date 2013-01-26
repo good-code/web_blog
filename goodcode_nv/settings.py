@@ -115,6 +115,7 @@ INSTALLED_APPS = (
     'reversion',
     'django.contrib.markup',
     'goodcode_nv',
+    'goodcode_nv.photographs',
     # '',
 )
 

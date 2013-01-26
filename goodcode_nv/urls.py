@@ -4,10 +4,11 @@ from goodcode_nv.views import Render_Post, Render_Frontpage
 from django.views.generic import TemplateView
 
 from django.contrib import admin
+from photographs.urls import urlpatterns as photopatterns
 admin.autodiscover()
 
+
 urlpatterns = patterns('',
-    # url(r'', include('feincms.urls')),
      url(r'^$', Render_Frontpage.as_view()),
      url(r'^post/(?P<sku>.*)$', Render_Post.as_view()), 
      url(r'^about/', TemplateView.as_view(template_name='about.html')),
@@ -18,6 +19,9 @@ urlpatterns = patterns('',
      url(r'^latest.rss', LatestPosts()),
 
 )
+
+
+urlpatterns += photopatterns
 #static folder to serve fonts from the same domain
 urlpatterns += patterns('',
             (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': '/home/goodcode/image-server/'}),

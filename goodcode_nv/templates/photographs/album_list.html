@@ -1,0 +1,11 @@
+{% extends "photographs/base.html" %}
+{% block title %} index {% endblock %}
+{% block content %}
+<ul>
+{% for album in albums %}
+    <li>    <a href='/album/{{album.sku}}/'><img src='{{album.random_photo}}' width=300 style='float:left;' /> <b style='clear:both;float:left;'> album {{album.name}}</b></a> </li>
+{% endfor %}
+   </ul>
+<a href='/'>back to frontpage</a>
+{% endblock %}
+

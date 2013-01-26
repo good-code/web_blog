@@ -1,0 +1,15 @@
+{% extends "photographs/base.html" %}
+{% block title %} {{ photograph.name }} {% endblock %}
+{% block content %}
+<div style='width:1400px;margin: 20px auto 50px;'>
+<h2 style='margin-top:-20px;'> <a href='{{ album.url }}' style='text-size:10px;' >{{album.name}}</a>: {{ photograph.name }}</h2>
+   <ul>
+    <li id='prev_photo' style='float:left;margin-top:100px;'><a href=''><img src='/static/img/prev.png'/></li>
+    <li style='float:left;'><img src='{{ photograph.dimage }}' /> </li>
+    <li id='next_photo' style='float:left;margin-top:100px;'><a href=''><img src='/static/img/next.png'/></li>
+    <div style='float:left;clear:both'><a href='{{ photograph.url}}' alt={{ photograph.name }} > Download</a> </div>
+   </ul>
+</div>
+   
+{% endblock %}
+

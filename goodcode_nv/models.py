@@ -56,3 +56,6 @@ class Fortune(models.Model):
       if not self.pk:
           pass
       super(Fortune, self).save(force_insert=force_insert, force_update=force_update)
+
+
+
