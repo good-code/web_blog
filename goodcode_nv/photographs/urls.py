@@ -7,8 +7,8 @@ admin.autodiscover()
 urlpatterns = patterns('',
 
      url(r'^photographs/', List_Albums.as_view()), 
-     url(r'^photographs/album/(?P<sku>.*)', Render_Album.as_view()), 
-     url(r'^photographs/photographs/(?P<sku>.*)', Render_Photograph.as_view()), 
+     url(r'^photographs/album/(?P<slug>.*)', Render_Album.as_view()), 
+     url(r'^photographs/photographs/(?P<slug>.*)', Render_Photograph.as_view()), 
 
 
 )

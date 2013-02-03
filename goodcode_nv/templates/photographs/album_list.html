@@ -1,11 +1,24 @@
 {% extends "photographs/base.html" %}
-{% block title %} index {% endblock %}
+{% load image_thumbnails %}
 {% block content %}
 <ul>
 {% for album in albums %}
-    <li>    <a href='/album/{{album.sku}}/'><img src='{{album.random_photo}}' width=300 style='float:left;' /> <b style='clear:both;float:left;'> album {{album.name}}</b></a> </li>
+
+    <li>
+        <a href='/photographs/album/{{album.slug}}/'>
+		{# gen_thumbs templatetag will show few thumbs for each album #}			
+		{% gen_album_thumbs album %}
+            <b style='clear:both;float:left;'> {{album.name}} </b>
+        </a>
+    </li>
+
 {% endfor %}
    </ul>
+<br />
+<br />
+<br />
+<br />
+<br />
 <a href='/'>back to frontpage</a>
 {% endblock %}
 

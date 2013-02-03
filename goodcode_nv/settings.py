@@ -117,6 +117,7 @@ INSTALLED_APPS = (
     'goodcode_nv',
     'goodcode_nv.photographs',
     'django_comments_xtd',
+    'sorl.thumbnail',
 )
 
 # A sample logging configuration. The only tangible logging

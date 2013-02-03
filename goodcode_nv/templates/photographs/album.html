@@ -1,9 +1,9 @@
 {% extends "photographs/base.html" %}
-{% block title %} {{ album.name }} {% endblock %}
+
 {% block content %}
 <h2> Photoalbum: {{ album.name }} </h2>
    <ul>
-{% for photograph in album.photographs %}
+{% for photograph in album.photograph_set.all %}
 <div class='photograph'><a href='/photograph/{{ photograph.sku }}/'>
         <img class='img_thumb' src='{{ photograph.thumb }}' /></a></div>
 {% endfor %}

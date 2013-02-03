@@ -1,0 +1,8 @@
+{% load thumbnail %}
+{% for photo in photographs %}
+
+  {% thumbnail photo.image 100x100 as image %}
+<img class='thumb' src="{{ image }}"  alt="{{ photo.name }}" width="{{ image.width }}" height="{{ image.height }}" />
+
+{% endfor %}
+
