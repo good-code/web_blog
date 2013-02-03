@@ -15,7 +15,8 @@ urlpatterns = patterns('',
      url(r'^contact/', TemplateView.as_view(template_name='contact.html')),
      url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
      url(r'^admin/', include(admin.site.urls)),
-     url(r'^comments/', include('django.contrib.comments.urls')),
+     #url(r'^comments/', include('django.contrib.comments.urls')),
+     url(r'^comments/', include('django_comments_xtd.urls')),
      url(r'^latest.rss', LatestPosts()),
 
 )

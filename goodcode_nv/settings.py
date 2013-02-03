@@ -116,7 +116,7 @@ INSTALLED_APPS = (
     'django.contrib.markup',
     'goodcode_nv',
     'goodcode_nv.photographs',
-    # '',
+    'django_comments_xtd',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -147,3 +147,6 @@ LOGGING = {
         },
     }
 }
+COMMENTS_XTD_CONFIRM_EMAIL = True
+COMMENTS_APP = "django_comments_xtd"
+

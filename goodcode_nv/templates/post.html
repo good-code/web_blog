@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load markup %}
+{% load comments_xtd %}
 {% load comments %}
 {%block header_title %}
    <title>{{ post.title }}</title>
@@ -12,10 +13,25 @@
    <div class="modified" style=''><b>Last modified</b>: {{post.modified|date:"b d Y"|capfirst}} </div>
             <div class="body">
 {{post.content|markdown}}
-{% render_comment_list for post %}                                                      
-{% render_comment_form for post %}
+
+{% get_last_xtdcomments 100 as comments for goodcode_nv.post %}
+{% if comments %}
+  {% for comment in comments %}
+    <p>{{ comment.comment|linebreaks|markdown }}</p> ...
+  {% endfor %}
+{% else %}
+  <p>No comments</p>
+{% endif %}
+
     </div>
+<div id='comment_form' style='margin-top:20px;'>
+
+{% render_comment_form for post %} 
+
 </div>
+</div>
+
+
 {% endblock %}
 
 

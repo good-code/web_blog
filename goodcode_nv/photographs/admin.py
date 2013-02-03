@@ -21,5 +21,5 @@ class AlbumOptions(admin.ModelAdmin):
 #   list_filter = ('active',)
 #   search_fields = ['slug', 'name']
 #
-admin.site.register(Photograph, PhotographAdmin)
-admin.site.register(Album, AlbumAdmin)
+admin.site.register(Photograph, PhotographOptions)
+admin.site.register(Album, AlbumOptions)
