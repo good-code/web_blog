@@ -7,5 +7,5 @@ def import_album(album, album_dir):
    for photo in album_files:
       print photo
       Photograph(name=photo, slug=photo, description='', active=True, album=album,
-                 image='/photographs/poland_december_2013/%s'% photo).save()
+                 image='/photographs/%s/%s'% (album_dir, photo)).save()
 
