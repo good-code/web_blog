@@ -2,7 +2,9 @@
 import os
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+THUMBNAIL_DEBUG = TEMPLATE_DEBUG
 FORCE_SCRIPT_NAME=""
+THUMBNAIL_EXTENSION = 'png'
 ADMINS = (
      ('Arek', 'arek@goodcode.co.uk'),
 )

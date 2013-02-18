@@ -1,12 +1,19 @@
 {% extends "photographs/base.html" %}
+{% load thumbnail %}
 
 {% block content %}
-<h2> Photoalbum: {{ album.name }} </h2>
-   <ul>
-{% for photograph in album.photograph_set.all %}
-<div class='photograph'><a href='/photograph/{{ photograph.sku }}/'>
-        <img class='img_thumb' src='{{ photograph.thumb }}' /></a></div>
+<h2> {{ album.name }} </h2>
+<br />
+<br />
+<br />
+{% for photograph in photographs %}
+  {% thumbnail photograph.image.url '200x200' as image %}
+    <div class='photograph' style='float:left;margin:5px;'>
+	<a href='/photographs/photograph/{{ photograph.slug }}/'>
+	<img class='thumb' src="{{ image.url }}"  alt="{{ photograph.name }}" width="{{ image.width }}" height="{{ image.height }}" />
+	</a>
+    </div>
+  {% endthumbnail %}
 {% endfor %}
-   </ul>
 {% endblock %}
 

@@ -6,9 +6,10 @@
 
     <li>
         <a href='/photographs/album/{{album.slug}}/'>
-		{# gen_thumbs templatetag will show few thumbs for each album #}			
+		<div style='clear:both;'>
 		{% gen_album_thumbs album %}
-            <b style='clear:both;float:left;'> {{album.name}} </b>
+		</div>
+            <b style='clear:both;'> {{album.name}} </b>
         </a>
     </li>
 

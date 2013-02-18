@@ -8,7 +8,8 @@ class Render_Album(TemplateView):
         return super(Render_Album, self).dispatch(*args, **kwargs)
 
     def get_context_data(self, slug,  **kwargs):
-	ctx= {'album': Album.objects.get(slug=slug)}
+        album = Album.objects.get(slug=slug)
+	ctx= {'album': album, 'photographs': album.photograph_set.filter(active=True)}
 	return ctx
 
 
