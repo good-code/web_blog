@@ -6,6 +6,7 @@
 <br />
 <br />
 <br />
+<div style='width:100%;clear: both;'>
 {% for photograph in photographs %}
   {% thumbnail photograph.image.url '200x200' as image %}
     <div class='photograph' style='float:left;margin:5px;'>
@@ -15,5 +16,12 @@
     </div>
   {% endthumbnail %}
 {% endfor %}
+</div>
+<br />
+<br />
+<br />
+<div style='width:100%;clear:both;'>
+	<a href='/photographs/' style='clear:both;'>Back to album index</a>
+</div>
 {% endblock %}
 
