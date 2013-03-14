@@ -14,6 +14,22 @@ class VersionedPostAdmin(VersionAdmin, PostOptions):
    list_display = ('title', 'sku', 'active', 'created', 'modified')
    list_filter = ('active',)
    search_fields = ['sku', 'name']
+   fieldsets = (
+        (None, {
+            'fields' : ('title', 'sku', 'meta', 'content', 'active'),
+	    'classes': ('wide', 'extrapretty'),
+        }),
+   #     ('Advanced options', {
+   #         'classes': ('collapse',),
+   #         'fields': ('enable_comments', 'registration_required', 'template_name')
+   #     }),
+   )
+   class Media:
+      css = {
+        "post": ("admin/goodcode/css/blog_post_admin.css",)
+      }
+      js = ("admin/goodcode/js/blog_post_admin.js",)
+
 
 class VersionedFortuneAdmin(VersionAdmin, FortuneOptions):
    ordering = ('name','slug')
