@@ -26,9 +26,9 @@ class VersionedPostAdmin(VersionAdmin, PostOptions):
    )
    class Media:
       css = {
-        "post": ("admin/goodcode/css/blog_post_admin.css",)
+        "post": ("goodcode_admin/css/blog_post_admin.css",)
       }
-      js = ("admin/goodcode/js/blog_post_admin.js",)
+      js = ("goodcode_admin/js/blog_post_admin.js",)
 
 
 class VersionedFortuneAdmin(VersionAdmin, FortuneOptions):

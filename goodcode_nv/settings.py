@@ -1,6 +1,7 @@
 # Django settings for goodcode_nv project.
 import os
 DEBUG = True
+APPEND_SLASH = False
 TEMPLATE_DEBUG = DEBUG
 THUMBNAIL_DEBUG = TEMPLATE_DEBUG
 FORCE_SCRIPT_NAME=""
@@ -152,4 +153,4 @@ LOGGING = {
 }
 COMMENTS_XTD_CONFIRM_EMAIL = True
 COMMENTS_APP = "django_comments_xtd"
-
+LATEST_ALBUMS_NR=4

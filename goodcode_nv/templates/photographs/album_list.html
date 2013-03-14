@@ -1,11 +1,11 @@
 {% extends "photographs/base.html" %}
 {% load image_thumbnails %}
 {% block content %}
-<ul>
+<ul style='width:65%;margin:auto;'>
 {% for album in albums %}
 
     <li>
-        <a href='/photographs/album/{{album.slug}}/'>
+        <a href='/photographs/album/{{album.slug}}'>
 		<div style='clear:both;'>
 		{% gen_album_thumbs album %}
 		</div>

@@ -10,7 +10,7 @@
 {% for photograph in photographs %}
   {% thumbnail photograph.image.url '200x200' as image %}
     <div class='photograph' style='float:left;margin:5px;'>
-	<a href='/photographs/photograph/{{ photograph.slug }}/'>
+	<a href='/photographs/photograph/{{ photograph.slug }}'>
 	<img class='thumb' src="{{ image.url }}"  alt="{{ photograph.name }}" width="{{ image.width }}" height="{{ image.height }}" />
 	</a>
     </div>
@@ -21,7 +21,7 @@
 <br />
 <br />
 <div style='width:100%;clear:both;'>
-	<a href='/photographs/' style='clear:both;'>Back to album index</a>
+	<a href='/photographs' style='clear:both;'>Back to album index</a>
 </div>
 {% endblock %}
 

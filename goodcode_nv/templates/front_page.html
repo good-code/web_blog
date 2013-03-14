@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load image_thumbnails %}
 {% load markup %}
 
 {% block content %}
@@ -27,5 +28,13 @@
        		<li><a class="link" href="{{post.url}}">{{post.title}}</a>
 		{% endfor %}
 	</ul>
+         <div id='latest_albums' style='margin:50px;'>
+		{% for album in albums %}
+                     <a href='/photographs/album/{{ album.slug }}'>
+			{% gen_album_thumbs album 1 %}
+		     </a>
+		{% endfor %}
+         </div>
+
 {% endblock %} 
 
