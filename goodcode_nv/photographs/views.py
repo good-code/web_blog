@@ -30,5 +30,5 @@ class List_Albums(TemplateView):
         return super(List_Albums, self).dispatch(*args, **kwargs)
 
     def get_context_data(self, **kwargs):
-	ctx= {'albums': Album.objects.filter(active=True)}
+	ctx= {'albums': Album.objects.filter(active=True).order_by('-id')}
 	return ctx

@@ -58,8 +58,7 @@ a {
     left: -259px;
     position: relative;
     top: 59px;
-
-
+    color: #919090;
 }
 
 h2 a {
@@ -121,14 +120,13 @@ h2     {
 	-moz-border-radius: 0.5em 0.5em 0.0em 0.0em;
 	-webkit-border-radius: 0.5em 0.5em 0.0em 0.0em;
 
-	min-height: 1200px;
+	min-height: 1600px;
 	padding: 20px;
 	min-width:900px;
 	
 }
 #right-container {
 	position: relative;
-	top:-1600px;
 	width: 350px;
 	float:right;
 }
@@ -137,8 +135,12 @@ h2     {
 	background-color: black;
 	min-height: 150px;
 }
+#post_list {
+        width: 60%;
+        float: left;
+}
 #post_list_container {
-	width:60%;
+//	width:60%;
 }
 	
 .post {
