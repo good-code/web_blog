@@ -12,7 +12,7 @@ ADMINS = (
 
 MANAGERS = ADMINS
 DIRNAME = os.path.join(__file__)
-DATABASES = { 'default': { 'ENGINE': 'django.db.backends.sqlite3', 'NAME':  '/home/goodcode/goodcode_nv/goodcode.db'}}
+DATABASES = { 'default': { 'ENGINE': 'django.db.backends.sqlite3', 'NAME':  '/home/fireant/goodcode_nv/goodcode.db'}}
 SITE_URL = 'http://goodcode.co.uk'
 
 # Local time zone for this installation. Choices can be found here:
