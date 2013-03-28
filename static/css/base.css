@@ -119,10 +119,9 @@ h2     {
 	border-radius: 0.5em 0.5em 0.0em 0.0em;
 	-moz-border-radius: 0.5em 0.5em 0.0em 0.0em;
 	-webkit-border-radius: 0.5em 0.5em 0.0em 0.0em;
-
-	min-height: 1600px;
-	padding: 20px;
 	min-width:900px;
+	min-height: 1700px;
+	padding: 20px;
 	
 }
 #right-container {
