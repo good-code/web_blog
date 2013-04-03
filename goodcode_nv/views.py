@@ -27,3 +27,13 @@ class Render_Post(TemplateView):
     def get_context_data(self, sku,  **kwargs):
 	ctx= {'post': Post.objects.get(sku=sku)}
 	return ctx
+
+class Experiment_page(TemplateView):
+    template_name = 'experiment.html'
+
+    def dispatch(self, *args, **kwargs):
+        return super(Experiment_page, self).dispatch(*args, **kwargs)
+
+    def get_context_data(self,  **kwargs):
+	ctx= {'posts': Post.objects.all()}
+	return ctx

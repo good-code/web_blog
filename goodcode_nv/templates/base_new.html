@@ -18,40 +18,33 @@
         <link rel="stylesheet" href="http://images.goodcode.co.uk/css/fonts.css" type="text/css" media="all" charset="utf-8">
 	<link rel="stylesheet" href="http://images.goodcode.co.uk/code_highlight/styles/default.css">
 	<script src="http://images.goodcode.co.uk/code_highlight/highlight.pack.js"></script>
-    <script src="http://images.goodcode.co.uk/js/jquery.min.js">
+    <script src="http://code.jquery.com/jquery.js">
     <script src="http://images.goodcode.co.uk/bootstrap/js/bootstrap.min.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
     </head>
     <body>
         <div id="body-container" class="clearfix">
-
-        <div class="navbar navbar-inverse" style='position:relative;top:15px;'>
+        <div id="header" class="clearfix">
+        <div id="logo"> <h1><a href="/" title="goodcode">goodcode</a></h1></div>
+<p id='logo_fortune'>"{{fortune.content}}"</p>
+        <div class="navbar navbar-inverse" style='width: 60%;float:right;margin-right:7%;position:relative;top:-20px;left:100px;'>
             <div class="navbar-inner">
-              {% block navbar %}
             <ul class="nav">
                 <li><a href="/about" title="about">about</a></li>
                 <li><a href="/photographs" title="photographs">photographs</a></li>
                 <li><a href="/contact" title="contact">contact</a></li>
                 <li><a href="/latest.rss" title="subscribe">subscribe</a></li>
             </ul>
-              {% endblock %}
-                <form class="navbar-search pull-left" id='search' action="/search" method="GET" style='float:right;'>
+
+                <form id='search' action="/search" method="GET" style='float:right;top:5px;position:relative;'>
                   <input type="text" class="search-query span2" name="q" value="" style='width:160px;'>
           </form>
           </div></div>
-
-
-
-        <div id="header" class="clearfix">
-        <div id="logo"> <h1><a href="/" title="goodcode">goodcode</a></h1></div>
-<p id='logo_fortune'>"{{fortune.content}}"</p>
-          {% comment %}
           <div id='breadrumbs' style='width:300px;float:right;background-color:white;position:relative;top:-41px;left:-700px;'>
               <ul class="breadcrumb">
                       <li><a href="/">Front Page</a> <span class="divider">/</span></li>
               </ul>
           </div>
-          {% endcomment %}
       </div><!-- end of header -->
           <div id="content">
               {% block content %}

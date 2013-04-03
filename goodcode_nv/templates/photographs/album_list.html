@@ -1,5 +1,14 @@
 {% extends "photographs/base.html" %}
 {% load image_thumbnails %}
+              {% block navbar %}
+            <ul class="nav">
+                <li><a href="/about" title="about">about</a></li>
+                <li class="active"><a href="/photographs" title="photographs">photographs</a></li>
+                <li><a href="/contact" title="contact">contact</a></li>
+                <li><a href="/latest.rss" title="subscribe">subscribe</a></li>
+            </ul>
+              {% endblock %}
+
 {% block content %}
 <ul style='width:65%;margin:auto;'>
 {% for album in albums %}
@@ -9,7 +18,7 @@
 		<div style='clear:both;'>
 		{% gen_album_thumbs album %}
 		</div>
-            <b style='clear:both;'> {{album.name}} </b>
+            <b style='clear:both;'>{{album.name}}</b>
         </a>
     </li>
 

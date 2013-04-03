@@ -12,53 +12,37 @@
         <meta name="copyright" content="arek@goodcode.co.uk" />
         <link rel="shortcut icon" href="http://images.goodcode.co.uk/img/favicon.ico" type="image/x-icon"/>
         <link rel="alternate" type="application/rss+xml" title="#goodcode main rss feed" href="">
-        <link href="http://images.goodcode.co.uk/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link rel="stylesheet" href="http://images.goodcode.co.uk/css/reset.css" type="text/css" media="all" charset="utf-8">
         <link rel="stylesheet" href="http://images.goodcode.co.uk/css/base.css" type="text/css" media="all" charset="utf-8">
         <link rel="stylesheet" href="http://images.goodcode.co.uk/css/fonts.css" type="text/css" media="all" charset="utf-8">
 	<link rel="stylesheet" href="http://images.goodcode.co.uk/code_highlight/styles/default.css">
 	<script src="http://images.goodcode.co.uk/code_highlight/highlight.pack.js"></script>
-    <script src="http://images.goodcode.co.uk/js/jquery.min.js">
-    <script src="http://images.goodcode.co.uk/bootstrap/js/bootstrap.min.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
     </head>
     <body>
         <div id="body-container" class="clearfix">
-
-        <div class="navbar navbar-inverse" style='position:relative;top:15px;'>
-            <div class="navbar-inner">
-              {% block navbar %}
-            <ul class="nav">
-                <li><a href="/about" title="about">about</a></li>
-                <li><a href="/photographs" title="photographs">photographs</a></li>
-                <li><a href="/contact" title="contact">contact</a></li>
-                <li><a href="/latest.rss" title="subscribe">subscribe</a></li>
-            </ul>
-              {% endblock %}
-                <form class="navbar-search pull-left" id='search' action="/search" method="GET" style='float:right;'>
-                  <input type="text" class="search-query span2" name="q" value="" style='width:160px;'>
-          </form>
-          </div></div>
-
-
-
         <div id="header" class="clearfix">
         <div id="logo"> <h1><a href="/" title="goodcode">goodcode</a></h1></div>
 <p id='logo_fortune'>"{{fortune.content}}"</p>
-          {% comment %}
-          <div id='breadrumbs' style='width:300px;float:right;background-color:white;position:relative;top:-41px;left:-700px;'>
-              <ul class="breadcrumb">
-                      <li><a href="/">Front Page</a> <span class="divider">/</span></li>
-              </ul>
-          </div>
-          {% endcomment %}
-      </div><!-- end of header -->
+        <div id="nav">
+            <ul class="navbar">
+                <li><a href="/about" title="about">about</a></li>
+                <li><a href="/photographs" title="photographs">photographs</a></li>
+                <li><a href="/contact" title="contact">contact</a></li>
+                <li><a href="/latest.rss" title="subscribe">subscribe</a></li></ul>
+
+                <form id='search' action="/search" method="GET">
+                  <input type="text" name="q" value="">
+                  <input type="submit" class="button" value="Search">
+          </form>
+          </div></div>
           <div id="content">
               {% block content %}
               {% endblock %} 
                              
       <div id="right-container">
            {% block right_rail %}
+              <h4>About</h4><p>place  to blog about what I'm busy with  ...</p>
            {% endblock %} 
      </div> </div></div></div></div>
 </div>
