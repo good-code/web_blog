@@ -11,6 +11,7 @@ if [ -f $PIDFILE ]; then
             rm -f -- $PIDFILE
         fi
 
-        source /home/fireant/goodcode_nv/vcode/bin/activate
-        exec ./manage.py runfcgi socket=$SOCKET pidfile=$PIDFILE
-	chown www-data:www-data $SOCKET
+source /home/fireant/goodcode_nv/vcode/bin/activate
+exec ./manage.py runfcgi socket=$SOCKET pidfile=$PIDFILE
+chown www-data:www-data $SOCKET
+chown www-data:www-data /home/fireant/goodcode_nv/goodcode.sock

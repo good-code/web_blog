@@ -1,11 +1,13 @@
 # Django settings for goodcode_nv project.
 import os
+FORCE_SCRIPT_NAME=""
 DEBUG = True
 APPEND_SLASH = False
 TEMPLATE_DEBUG = DEBUG
 THUMBNAIL_DEBUG = TEMPLATE_DEBUG
-FORCE_SCRIPT_NAME=""
 THUMBNAIL_EXTENSION = 'png'
+THUMBNAIL_ENGINE = 'sorl.thumbnail.engines.pil_engine.Engine'
+
 ADMINS = (
      ('Arek', 'arek@goodcode.co.uk'),
 )
@@ -13,8 +15,8 @@ ADMINS = (
 MANAGERS = ADMINS
 DIRNAME = os.path.join(__file__)
 DATABASES = {
-        'postgres': { 'ENGINE': 'django.db.backends.postgresql_psycopg2', 'NAME':  'goodcode', 'USER': 'fireant', 'PASSWORD':'Data_13'},       
-        'default' : { 'ENGINE': 'django.db.backends.sqlite3', 'NAME':  '/home/fireant/goodcode_nv/goodcode.db'},
+        'default': { 'ENGINE': 'django.db.backends.postgresql_psycopg2', 'NAME':  'goodcode', 'USER': 'fireant', 'PASSWORD':'Data_13'},       
+        #'default' : { 'ENGINE': 'django.db.backends.sqlite3', 'NAME':  '/home/fireant/goodcode_nv/goodcode.db'},
         #'bkp' : { 'ENGINE': 'django.db.backends.sqlite3', 'NAME':  '/home/fireant/goodcode_nv/goodcode_bk.db'},
         }
 SITE_URL = 'http://goodcode.co.uk'
@@ -47,7 +49,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = '/home/goodcode/image-server/'
+MEDIA_ROOT = '/home/fireant/image-server/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -56,7 +58,7 @@ MEDIA_URL = 'http://images.goodcode.co.uk/'
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
-STATIC_ROOT = '/home/goodcode/image-server/static/'
+STATIC_ROOT = '/home/fireant/image-server/static/'
 
 # URL prefix for static files.
 STATIC_URL = '/static/'

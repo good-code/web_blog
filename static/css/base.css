@@ -51,7 +51,7 @@ a {
 #shadow {
 	float:left;
 	position:relative;
-	left:-92px;
+	left:-132px;
 	top:32px;
 }
 #logo_fortune {
@@ -79,7 +79,7 @@ h2     {
 .date {
 	background-color: #3D3D1F;
 	display: block;
-	width: 60px;
+	width: 100px;
 	height: 22px;
 	margin-left:-60px;
 	color: white;
@@ -122,7 +122,7 @@ h2     {
 	-moz-border-radius: 0.5em 0.5em 0.0em 0.0em;
 	-webkit-border-radius: 0.5em 0.5em 0.0em 0.0em;
 	min-width:900px;
-	min-height: 2000px;
+	min-height: 2050px;
 	padding: 20px;
 	
 }
@@ -135,7 +135,6 @@ h2     {
 #footer {
 	background-image: url('/footer_bg.png');
 	background-color: black;
-	min-height: 150px;
 }
 #post_list {
         width: 60%;
