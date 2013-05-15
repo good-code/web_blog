@@ -15,7 +15,7 @@ ADMINS = (
 MANAGERS = ADMINS
 DIRNAME = os.path.join(__file__)
 DATABASES = {
-        'default': { 'ENGINE': 'django.db.backends.postgresql_psycopg2', 'NAME':  'goodcode', 'USER': 'fireant', 'PASSWORD':'Data_13'},       
+        'default': { 'ENGINE': 'django.db.backends.postgresql_psycopg2', 'NAME':  'goodcode', 'USER': 'fireant', 'PASSWORD':'zasowka_00'},       
         #'default' : { 'ENGINE': 'django.db.backends.sqlite3', 'NAME':  '/home/fireant/goodcode_nv/goodcode.db'},
         #'bkp' : { 'ENGINE': 'django.db.backends.sqlite3', 'NAME':  '/home/fireant/goodcode_nv/goodcode_bk.db'},
         }
