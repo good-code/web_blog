@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
 {% load image_thumbnails %}
 {% load markup %}
+{% block header_title %}
+        <title>GoodCode.co.uk, Linux/Unix, web, mobile software programming</title>
+{% endblock %}
 
 {% block content %}
 <div id="post_list">
-<div id="post_list_container">{% for post in posts|slice:":5" %}
+<div id="post_list_container">{% for post in posts|slice:":4" %}
 <div class="post clearfix">
 <div class='post_header'>
 <div class="date"> 
