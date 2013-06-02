@@ -1,4 +1,4 @@
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from goodcode_nv.models import Post, Fortune
 from photographs.models import Album
@@ -25,7 +25,7 @@ class Render_Post(TemplateView):
         return super(Render_Post, self).dispatch(*args, **kwargs)
 
     def get_context_data(self, sku,  **kwargs):
-	ctx= {'post': Post.objects.get(sku=sku)}
+	ctx= {'post': get_object_or_404(Post,sku=sku)}
 	return ctx
 
 class Experiment_page(TemplateView):

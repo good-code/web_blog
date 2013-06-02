@@ -1,7 +1,7 @@
 # Django settings for goodcode_nv project.
 import os
 FORCE_SCRIPT_NAME=""
-DEBUG = True
+DEBUG = False
 APPEND_SLASH = False
 TEMPLATE_DEBUG = DEBUG
 THUMBNAIL_DEBUG = TEMPLATE_DEBUG

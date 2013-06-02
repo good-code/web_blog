@@ -1,5 +1,6 @@
 from models import Photograph, Album
 from django.views.generic import TemplateView
+from django.shortcuts import get_object_or_404
 
 class Render_Album(TemplateView):
     template_name = 'photographs/album.html'
@@ -8,7 +9,7 @@ class Render_Album(TemplateView):
         return super(Render_Album, self).dispatch(*args, **kwargs)
 
     def get_context_data(self, slug,  **kwargs):
-        album = Album.objects.get(slug=slug)
+        album = get_object_or_404(Album, slug=slug)
 	ctx= {'album': album, 'photographs': album.photograph_set.filter(active=True)}
 	return ctx
 
@@ -20,7 +21,7 @@ class Render_Photograph(TemplateView):
         return super(Render_Photograph, self).dispatch(*args, **kwargs)
 
     def get_context_data(self, slug,  **kwargs):
-	ctx= {'photograph': Photograph.objects.get(slug=slug)}
+	ctx= {'photograph': get_object_or_404(Photograph, slug=slug)}
 	return ctx
 
 class List_Albums(TemplateView):

@@ -22,7 +22,6 @@ urlpatterns = patterns('',
 
 )
 
-
 urlpatterns += photopatterns
 #static folder to serve fonts from the same domain
 urlpatterns += patterns('',

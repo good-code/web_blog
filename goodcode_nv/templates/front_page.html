@@ -31,7 +31,8 @@
        		<li><a class="link" href="{{post.url}}">{{post.title}}</a>
 		{% endfor %}
 	</ul>
-         <div id='latest_albums' style='margin:50px;'>
+         <div id='latest_albums' style='margin:16px;'>
+             <h3> Latest photo albums:</h3>
 		{% for album in albums %}
                      <a href='/photographs/album/{{ album.slug }}'>
 			{% gen_album_thumbs album 1 %}
@@ -40,4 +41,3 @@
          </div>
 
 {% endblock %} 
-
