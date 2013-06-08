@@ -2,14 +2,16 @@ from reversion.admin import VersionAdmin
 from models import Post, Fortune
 from django.contrib import admin
 
-class PostOptions(admin.ModelAdmin):
-   pass
-
-class FortuneOptions(admin.ModelAdmin):
-   pass
-
+#TODO  REMOVE THESE!!!
+#class PostOptions(admin.ModelAdmin):
+#   pass
+#
+#class FortuneOptions(admin.ModelAdmin):
+#   pass
+#
 
 class VersionedPostAdmin(VersionAdmin, PostOptions):
+   """ configure admin Post features here """
    ordering = ('-created','title','sku')
    list_display = ('title', 'sku', 'active', 'created', 'modified')
    list_filter = ('active',)
@@ -25,6 +27,7 @@ class VersionedPostAdmin(VersionAdmin, PostOptions):
    #     }),
    )
    class Media:
+      """ custom js and css for admin form """
       css = {
         "post": ("goodcode_admin/css/blog_post_admin.css",)
       }
@@ -32,6 +35,7 @@ class VersionedPostAdmin(VersionAdmin, PostOptions):
 
 
 class VersionedFortuneAdmin(VersionAdmin, FortuneOptions):
+   """ configure admin fortunes features here """
    ordering = ('name','slug')
    list_display = ('name', 'slug', 'active', 'created',)
    list_filter = ('active',)

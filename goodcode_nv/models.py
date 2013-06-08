@@ -3,6 +3,7 @@ from goodcode_nv import settings
 from django.template.defaultfilters import slugify
 
 class Post(models.Model):
+   """ Blog Post """
    title    = models.CharField(max_length=255)
    sku    = models.CharField(max_length=255, blank=True)
    meta = models.CharField(max_length=255, blank=True)
@@ -34,6 +35,7 @@ class Post(models.Model):
       super(Post, self).save(force_insert=force_insert, force_update=force_update)
 
 class Fortune(models.Model):
+   """ quotes in header """
    name  = models.CharField(max_length=255)
    slug    = models.CharField(max_length=255)
    content = models.TextField()
