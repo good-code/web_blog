@@ -15,13 +15,12 @@ def test():
 
 
 def deploy():
-    """
-    deploy to goodcode.co.uk
+    """ deploy to goodcode.co.uk """
 
-    """
     test()
     local('git add -p && git commit')
-    local('git push')
+    local('git push -u github master')
+    local('git push -u origin thinkpad')
 
 def shell():
     """run shell"""
