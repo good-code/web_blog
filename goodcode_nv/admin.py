@@ -10,7 +10,7 @@ from django.contrib import admin
 #   pass
 #
 
-class VersionedPostAdmin(VersionAdmin, PostOptions):
+class VersionedPostAdmin(VersionAdmin):
    """ configure admin Post features here """
    ordering = ('-created','title','sku')
    list_display = ('title', 'sku', 'active', 'created', 'modified')
@@ -34,7 +34,7 @@ class VersionedPostAdmin(VersionAdmin, PostOptions):
       js = ("goodcode_admin/js/blog_post_admin.js",)
 
 
-class VersionedFortuneAdmin(VersionAdmin, FortuneOptions):
+class VersionedFortuneAdmin(VersionAdmin):
    """ configure admin fortunes features here """
    ordering = ('name','slug')
    list_display = ('name', 'slug', 'active', 'created',)
