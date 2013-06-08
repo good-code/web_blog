@@ -19,8 +19,11 @@ def deploy():
 
     test()
     local('git add -p && git commit')
+    local('git push -u goodcode thinkpad')
+
+def update_github():
+    """push local changes to github"""
     local('git push -u github master')
-    local('git push -u origin thinkpad')
 
 def shell():
     """run shell"""
