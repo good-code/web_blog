@@ -60,14 +60,16 @@ def search_view(request, page=0, count=0, template="search.html"):
     try:
         keywords = str(data.get('q', ''))
         keywords = filter(None, keywords)
+        for word in keywords.split():
+            query = '|'.join(word)
     except:
-        keywords = ""
+        query = ""
 
     log.info('keywords where set to : %s' % keywords)
 
     paginator = None
     try:
-        results = search(keywords)
+        results = search(query)
     except:
         results = []
 
