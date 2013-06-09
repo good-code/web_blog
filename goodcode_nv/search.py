@@ -2,25 +2,45 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.core.paginator import Paginator
 from django.views.decorators.cache import never_cache
+from django.db import connection
 from models import Post
 import logging
 import re
 log = logging.getLogger('goodcode_nv.search')
 
 def search(query):
-    query=re.escape(query)
+    """ wrapper around postgres full text search """
+
+    #escape user input, query is passed as %s and it will be escaped by database api
+    # so it is not nessesary to escape it here!
+    #query=re.escape(query)
+    #TODO:  for keyword in keywords create query in form key & key | key ! key
+    log.info('quering db for: %s' % query)
     try:
-        results = Post.objects.filter(active=True).extra(select={'snippet': "headline(description, to_tsquery(%s))",
-                                                                 'rank': "RANK(search_tsv, to_tsquery(%s))"},
-        where=["search_tsv @@ to_tsquery(%s)"],
-        select_params=[query, query], params=[query,],order_by=['-rank',])
+        results = Post.objects.filter(active=True).extra(select={'snippet': "ts_headline(content, to_tsquery(%s))",
+                                                                 'rank': "ts_rank_cd(search_tsv, %s, 32 /* rank/(rank+1) */ )"},
+                                                         where =["search_tsv @@ to_tsquery(%s)"],
+        select_params=[query, query], params=[query,], order_by=['-rank',])
     except:
-        pass
+        results = None
+
+    return results
+
+def get_keywords(id):
+    """get_keywords: return set of keywords for given post"""
+    try:
+        cursor = connection.cursor()
+        cursor.execute('select search_tsv as vector FROM goodcode_nv_post where id=%s;', [id])
+        results = cursor.fetchall()
+    except:
+        results = None
+
     return results
 
 
-def search_view(request, page=0, count=0, template="shop/paginated_search.html"):
+def search_view(request, page=0, count=0, template="search.html"):
     """Perform a search based on keywords and categories in the form submission"""
+
     if request.method=="GET":
         data = request.GET
     else:
@@ -38,37 +58,31 @@ def search_view(request, page=0, count=0, template="shop/paginated_search.html")
             page = 1
 
     try:
-        keywords = str(data.get('keywords', ''))
+        keywords = str(data.get('q', ''))
         keywords = filter(None, keywords)
     except:
         keywords = ""
 
-    paginator = None
-    log.debug('keywords: %s' % keywords)
+    log.info('keywords where set to : %s' % keywords)
 
-    # returns dictionary of products maching given keywords.
-    # needs to be chached with memcache just like latest designs are.i
-    # I think the method can be made more universal and moved to seperate module.  
-    #results = Product.objects.extra(select={'snippet': "headline(description, to_tsquery(%s))", 'rank': "RANK(search_tsv, to_tsquery(%s))"},
-    #                                where=["search_tsv @@ to_tsquery(%s)"], select_params=[keywords, keywords,], params=[keywords,])
-    results=[]
-    #for p in Product.objects.raw("SELECT *, RANK(search_tsv, q) AS rank FROM product_product, to_tsquery(%s) AS q WHERE search_tsv @@ q ORDER BY rank DESC;" % "'"+keywords[0]+"'"):
-    #    results.append(p)
+    paginator = None
     try:
-        results = search("'|"+keywords+"'")
+        results = search(keywords)
     except:
-        pass
+        results = []
+
+    log.info('results : %s' % results)
     try:
         paginator = Paginator(results, 10)
     except:
-        pass
+        paginator = None
     try:
         pagen =paginator.page(currpage)
-        log.debug('found something for keyword: %s' % keywords)
+        #log.debug('found something for keyword: %s' % keywords)
     except:
-        log.debug('no search resoults for keyword %s:' % keywords)
+        #log.debug('no search resoults for keyword %s:' % keywords)
         pagen = None
-    if results > 10:
+    if len(results) > 10:
         is_paged = True
     context = RequestContext(request, 
            {
