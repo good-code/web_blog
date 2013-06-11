@@ -1,1 +1,4 @@
 Mon, 10 Jun 2013 00:32:29 root         INFO     Goodcode Started
+Mon, 10 Jun 2013 00:42:44 goodcode_nv.search INFO     keywords where set to : bleatchley
+Mon, 10 Jun 2013 00:42:44 goodcode_nv.search INFO     quering db for: b|l|e|a|t|c|h|l|e|y
+Mon, 10 Jun 2013 00:42:44 goodcode_nv.search INFO     results : [<Post: Gentoo linux backup scripts - gentoo_backup>]
