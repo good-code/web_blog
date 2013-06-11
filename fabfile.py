@@ -23,7 +23,7 @@ def deploy():
 
 def update_github():
     """push local changes to github"""
-    local('git push -u github master')
+    local('git push -u github thinkpad')
 
 def shell():
     """run shell"""
